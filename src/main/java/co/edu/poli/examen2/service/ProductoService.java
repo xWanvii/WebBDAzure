@@ -38,10 +38,12 @@ public class ProductoService {
     }
 
     public Producto deleteProducto(String id) {
-        return productoRepository.findById(id).map(producto -> {
-            productoRepository.delete(producto);
-            return producto;
-        }).orElse(null);
+        Producto existingProducto = productoRepository.findById(id).orElse(null);
+        if (existingProducto != null) {
+            productoRepository.delete(existingProducto);
+            return existingProducto;
+        }
+        return null;
     }
     
 }
