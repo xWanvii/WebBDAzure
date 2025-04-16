@@ -12,6 +12,7 @@ public class Producto {
     private String id;
     private String nombre;
     private String descripcion;
+    private double precio;
 
     public Producto() {
     }
@@ -40,5 +41,12 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }    
 
 }
